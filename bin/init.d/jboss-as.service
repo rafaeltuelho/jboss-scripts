@@ -1,0 +1,12 @@
+[Unit]
+Description=JBoss EAP Service
+After=syslog.target network.target
+
+[Service]
+ExecStart=/opt/redhat/jboss-eap-6.3/domain/bin/jboss-init.sh start
+ExecStop=/opt/redhat/jboss-eap-6.3/domain/bin/jboss-init.sh stop
+Type=forking
+#PIDFile=/var/run/jboss-as/jboss-as-domain.pid
+
+[Install]
+WantedBy=multi-user.target
